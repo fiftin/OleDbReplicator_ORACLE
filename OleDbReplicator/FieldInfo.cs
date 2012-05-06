@@ -50,10 +50,10 @@ namespace OleDbReplicator
             string result = "";
             switch (DBTypeName)
             {
-                case "NUMBER(1)":
+                case "BIT":
                     result = ((bool)obj) ? "1" : "0";
                     break;
-                case "DATE":
+                case "DATETIME":
                     DateTime dateTime = (DateTime)obj;
                     if (dateTime.Year < 1800)
                         obj = DateTime.Parse("01.01.2000");
@@ -61,7 +61,6 @@ namespace OleDbReplicator
                     break;
                 case "VARCHAR":
                     string stringValue = UnknownEncoding.Unknown.GetString(Encoding.Unicode.GetBytes((string)obj)).Trim();
-                    stringValue = stringValue.Replace("'", "''");
                     result = string.Format("'{0}'", stringValue);
                     break;
                 case "DECIMAL":
@@ -82,7 +81,7 @@ namespace OleDbReplicator
 
         public override string ToString()
         {
-            string ret = string.Format("\"{0}\" {1}", Name, DBTypeName);
+            string ret = string.Format("[{0}] {1}", Name, DBTypeName);
             if (Length != -1)
                 ret += string.Format("({0})", Length);
             return ret;

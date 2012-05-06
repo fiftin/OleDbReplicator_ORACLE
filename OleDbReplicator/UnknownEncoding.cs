@@ -32,7 +32,7 @@ namespace OleDbReplicator
                 case '': return 'Î';
                 case '‚': return 'Â';
                 case '€': return 'À';
-                //case ' ': return ' ';
+                case ' ': return ' ';
                 case 'œ': return 'Ü';
                 case '': return 'Í';
                 case 'ˆ': return 'È';
@@ -51,9 +51,9 @@ namespace OleDbReplicator
                 case '§': return 'ç';
                 case 'á': return 'ñ';
                 case '£': return 'ã';
-                //case '-': return '-';
+                case '-': return '-';
                 case ' ': return 'à';
-                //case '.': return '.';
+                case '.': return '.';
                 case 'Œ': return 'Ì';
                 case 'â': return 'ò';
                 case '': return 'Á';
@@ -77,7 +77,7 @@ namespace OleDbReplicator
                 case 'è': return 'ø';
                 case '': return 'Ş';
                 case '–': return 'Ö';
-                //case '"': return '"';
+                case '"': return '"';
                 case '5': return '5';
                 case '0': return '0';
                 case '›': return 'Û';
@@ -86,13 +86,11 @@ namespace OleDbReplicator
                 case 'ç': return '÷';
                 case '': return 'İ';
                 case '¯': return 'ï';
+                //
                 case 'ñ': return '¸';
                 case 'å': return 'õ';
                 case 'ä': return 'ô';
                 case 'î': return 'ş';
-                case '™': return 'Ù';
-                case 'ğ': return '¨';
-                case 'ü': return '¹';
                 default:
                     return c;
             }
